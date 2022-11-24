@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if lecture %}
+<h4>{{lecture.lecture_name}}</h4>
+<hr>
+    Uploader : {{lecture.uploader}}
+<hr>
+    Date : {{lecture.upload_time}}
+<hr>
+ {{lecture.content|safe}}
+
+{% else %}
+<div class="alert alert-warning">
+    There Is No Such Lecture!!!
+</div>
+{% endif %}
+
+{% endblock body %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="text-center" >
+        <h2 style="color: #ba2776"> <b> Lecture Notes Sharing Page </b> </h2>
+            <div>
+                <br>
+                <img src="{{ url_for('static', filename='img/ders.jpg') }}" class="rounded float-left" alt="" style="width:400px;height:200px;">
+                <div style="color: #0f0729;">
+                    <p>   <br>Let's Lecture is a publishing platform for scientific research. A professional network that allows 
+                    scientists and researchers to communicate and share information. If you have met the requirements to create 
+                    a Let's Lecture account, you can now add your own research as an article. English is used globally on the site, 
+                    but you can also share content in your own language if you wish. </p>
+                    <br><br><br>
+                    <img src="{{ url_for('static', filename='img/distance1.jpg') }}" class="rounded float-right" alt="" style="width:300px;height:168px;color: #0f0729;">
+                     <p>   <br>On this page, the notes of the related courses are shared. Courses and related documents of various engineering 
+                    departments of universities can be found on this page. As Let's Lecture, we are happy to assist all students who 
+                    are members with their course documents. Students or logged-in members can access the preliminary information about 
+                    the course they want and the lecture notes of those courses free of charge. Thanks to Let's Lecture, they will both 
+                    feel comfortable about their lecture notes and will be better equipped for their exams. Then don't be late, dear 
+                    students, <b>LET'S LECTURE!!!</b></p>
+                </div>
+            </div>
+    </div>            
+{% endblock body %}
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+    $(document).ready(function () {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+</script>
+
+{% endblock javascripts %}

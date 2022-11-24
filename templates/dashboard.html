@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h3>Dashboard</h3>
+<h4> Welcome, {{session["name"]}}</h4>
+<hr>
+<a href="/addlecture" class="btn btn-info"> Add Lecture </a>    
+<hr>
+
+{% if lectures %}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Lecture Name</th>
+      <th scope="col">Uploader</th>
+      <th scope="col">Date</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for lecture in lectures %} 
+    <tr>
+      <th scope="row">{{lecture.id}}</th>
+      <td><a href="/lecture/{{lecture.id}}">{{lecture.lecture_name}}</td>
+      <td>{{lecture.uploader}}</td>
+      <td>{{lecture.upload_time}}</td>
+      <td><a href="/edit/{{lecture.id}}" class="btn btn-light">Edit</a> </td>
+      <td><a href="/delete/{{lecture.id}}" class="btn btn-light">Delete</a> </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="alert alert-danger"> There is no lecture added in the system, yet!!! </div>
+{% endif %}    
+
+
+{% endblock %}

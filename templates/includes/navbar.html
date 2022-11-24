@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #ba2776;">
+      <a class="navbar-brand" href="/">
+        <img src="{{ url_for('static', filename='img/logoo.png') }}" class="d-inline-block align-top" alt="" style="width:40px;height:40px;" type="image/png"/> <b><em>Let's Lecture </em></b>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav m-auto">
+         <li class="nav-item active">
+            <a class="nav-link" href="/about"><i class="fa fa-globe"></i><b>About</b></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/lectures"><i class="fa fa-book"></i><b>Lectures</b></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        {% if session["logged_in"] %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/dashboard"><i class="fa fa-tachometer"></i><b>Dashboard</b></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout"><i class="fa fa-sign-out"></i><b>Logout</b></a>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/login"><i class="fa fa-sign-in"></i><b>Login</b></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/register"><i class="fa fa-fw fa-user"></i><b>Register</b></a>
+          </li>
+        {% endif %}
+        </ul>
+      </div>
+    </nav>
